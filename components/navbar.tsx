@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, Moon, Sun } from "lucide-react";
@@ -43,7 +44,7 @@ export function Navbar({ isDark, toggleDark }: NavbarProps) {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <a href="#home" className="group flex items-center gap-2">
           <div>
-            <img src="/logo.png" alt="Logo" width={65} height={65} />
+            <Image src="/Logo.png" alt="Logo" width={65} height={65} />
           </div>
           <span className="font-oswald text-sm uppercase tracking-wider text-brown-dark dark:text-cream">
             Koncepthive Fitness
