@@ -1,26 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-gold: #d5a310;
+  --color-gold-hover: #C09215;
+  --color-gold-light: #E8B82A;
+
+  --color-cream: #f1f0eb;
+  --color-cream-dark: #E0D9CF;
+
+  --color-brown-dark: #292113;
+
+  --color-dark: #040304;
+  --color-dark-card: #1A1A1A;
+  --color-dark-border: #2c2c2c;
+  --color-dark-surface: #111111;
+
+  --font-inter: "Inter", sans-serif;
+  --font-oswald: "Oswald", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    @apply bg-cream text-gray-900 font-inter transition-colors duration-300;
+  }
+
+  .dark body {
+    @apply bg-dark text-white;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-oswald uppercase tracking-wide;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-cream dark:bg-dark;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-gray-300 dark:bg-dark-border;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gold;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .text-stroke {
+    -webkit-text-stroke: 1px rgba(212, 160, 23, 0.3);
+    color: transparent;
+  }
+
+  .dark .text-stroke {
+    -webkit-text-stroke: 1px rgba(212, 160, 23, 0.2);
+  }
 }
