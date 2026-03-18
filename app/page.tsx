@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 
+import { AboutSection } from "@/components/about-section";
 import { HeroSection } from "@/components/hero-section";
 import { Navbar } from "@/components/navbar";
 
@@ -32,13 +33,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar isDark={isDark} toggleDark={toggleDark} />
       <HeroSection />
-
-      <section
-        id="about"
-        className="flex min-h-[60vh] items-center justify-center border-b border-gray-200 px-6 dark:border-dark-border"
-      >
-        <h2 className="text-4xl text-brown-dark dark:text-cream md:text-5xl">About</h2>
-      </section>
+      <AboutSection />
       <section
         id="services"
         className="flex min-h-[60vh] items-center justify-center border-b border-gray-200 px-6 dark:border-dark-border"
