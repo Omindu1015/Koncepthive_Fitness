@@ -6,7 +6,13 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, Moon, Sun } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetClose, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 interface NavbarProps {
   isDark: boolean;
@@ -104,6 +110,7 @@ export function Navbar({ isDark, toggleDark }: NavbarProps) {
               </Button>
             </SheetTrigger>
             <SheetContent>
+              <SheetTitle className="sr-only">Mobile Navigation Menu</SheetTitle>
               <AnimatePresence>
                 <motion.ul
                   initial={{ opacity: 0, y: 16 }}

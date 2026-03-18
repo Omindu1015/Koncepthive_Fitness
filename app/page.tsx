@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 
 import { AboutSection } from "@/components/about-section";
+import { ContactSection } from "@/components/contact-section";
+import { Footer } from "@/components/footer";
 import { HeroSection } from "@/components/hero-section";
 import { MembershipSection } from "@/components/membership-section";
 import { Navbar } from "@/components/navbar";
@@ -40,12 +42,8 @@ export default function Home() {
       <ServicesSection />
       <MembershipSection />
       <TrainersSection />
-      <section
-        id="contact"
-        className="flex min-h-[60vh] items-center justify-center px-6"
-      >
-        <h2 className="text-4xl text-brown-dark dark:text-cream md:text-5xl">Contact</h2>
-      </section>
+      <ContactSection />
+      <Footer />
     </main>
   );
 }
