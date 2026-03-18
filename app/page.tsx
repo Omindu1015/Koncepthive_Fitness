@@ -7,6 +7,7 @@ import { HeroSection } from "@/components/hero-section";
 import { MembershipSection } from "@/components/membership-section";
 import { Navbar } from "@/components/navbar";
 import { ServicesSection } from "@/components/services-section";
+import { TrainersSection } from "@/components/trainers-section";
 
 
 
@@ -38,12 +39,7 @@ export default function Home() {
       <AboutSection />
       <ServicesSection />
       <MembershipSection />
-      <section
-        id="trainers"
-        className="flex min-h-[60vh] items-center justify-center border-b border-gray-200 px-6 dark:border-dark-border"
-      >
-        <h2 className="text-4xl text-brown-dark dark:text-cream md:text-5xl">Trainers</h2>
-      </section>
+      <TrainersSection />
       <section
         id="contact"
         className="flex min-h-[60vh] items-center justify-center px-6"
