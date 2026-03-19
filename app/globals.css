@@ -63,11 +63,11 @@
 
 @layer utilities {
   .text-stroke {
-    -webkit-text-stroke: 1px rgba(212, 160, 23, 0.3);
+    -webkit-text-stroke: 3px rgba(212, 160, 23, 0.3);
     color: transparent;
   }
 
   .dark .text-stroke {
-    -webkit-text-stroke: 1px rgba(212, 160, 23, 0.2);
+    -webkit-text-stroke: 3px rgba(212, 160, 23, 0.2);
   }
 }
