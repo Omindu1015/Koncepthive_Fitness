@@ -45,7 +45,7 @@ export function HeroSection() {
 
           <h1 className="mb-6 text-5xl font-bold leading-[1.1] text-white md:text-7xl lg:text-8xl">
             NO EXCUSES. <br />
-            <span className="text-stroke">JUST RESULTS.</span>
+            <span className="text-stroke text-gold">JUST RESULTS.</span>
           </h1>
 
           <p className="mb-10 max-w-2xl font-inter text-lg text-gray-300 md:text-xl">

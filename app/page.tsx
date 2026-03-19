@@ -14,17 +14,22 @@ import { TrainersSection } from "@/components/trainers-section";
 
 
 export default function Home() {
-  const [isDark, setIsDark] = useState(() => {
-    if (typeof window === "undefined") return false;
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) return savedTheme === "dark";
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
-  });
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    const shouldUseDark = savedTheme
+      ? savedTheme === "dark"
+      : window.matchMedia("(prefers-color-scheme: dark)").matches;
     const root = document.documentElement;
-    root.classList.toggle("dark", isDark);
-  }, [isDark]);
+    root.classList.toggle("dark", shouldUseDark);
+
+    const frame = window.requestAnimationFrame(() => {
+      setIsDark(shouldUseDark);
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
 
   const toggleDark = () => {
     const root = document.documentElement;
